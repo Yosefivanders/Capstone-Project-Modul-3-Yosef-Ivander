@@ -93,3 +93,48 @@ Diprediksi tidak membuka deposito dan memang tidak.
 # Implikasi Strategi Marketing
   ## Jika FN tinggi :
   * Banyak nasabah potensial tidak ditarget.
+  * Solusi :
+    * Tingkatkan recall model.
+    * Perbaiki segmentasi.
+  ## Jika FP tinggi :
+  * Campaign terlalu luas.
+  * Solusi :
+    * Perbaiki precision.
+    * Fokus nasabah potensial.
+
+# Machine Learning Strategy
+1. Problem Framing
+   Masalah ini diformulasikan sebagai Binary Classification Problem, dengan tujuan memprediksi apakah seorang nasabah akan membuka deposito (Yes/No) berdasarkan karakteristik finansialnya, khususnya customer dengan kepemilikan pinjaman.
+   * Target Variable (y) : deposit (Yes/No)
+   * Tipe Model : Supervised Learning - Classification
+   * Output Model : Probabilitas nasabah membuka deposito
+   
+2. Data Understanding & Feature Selection
+Fitur Utama (Core Features)
+   Fitur ini menjadi fokus utama analisis:
+     * housing - kepemilikan KPR
+     * loan - kepemilikan personal loan
+Fitur Pendukung
+  Digunakan untuk meningkatkan akurasi dan konteks model :
+    * age
+    * job
+    * balance
+    * contract
+    * month
+    * campaign
+    * pdays
+    * poutcome
+Strategi :
+    * Loan sebagai variabel utama analisis
+    * Variabel lain sebagai kontrol agar hasil lebih realistis
+3. Model Selection Strategy
+ * Baseline Model : Logistic Regression
+ * Candidate Models :
+     * Decision Tree
+     * Random Forest
+     * Gradient Boosting (XGBoost / LightGBM)
+4. Evaluatin Strategy
+Primary Metrics
+  * Recall --- Meminimalkan False Negative
+  * Precision --- Menghindari pemborosan campaign
+  * F1-Score --- Keseimbangan precision & recall
