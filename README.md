@@ -7,7 +7,8 @@
 Proyek ini bertujuan menganalisis efektivitas kampanye marketing bank dalam menawarkan produk deposito kepada nasabah, dengan fokus pada pengaruh kepemilikan pinjaman seperti housing loan dan personal loan terhadap keputusan nasabah membuka deposito.
 Melalui pendekatan machine learning classification, proyek ini akan mengidentifikasi faktor-faktor yang memengaruhi respons nasabah terhadap kampanye serta membantu bank meningkatkan strategi targeting marketing agar lebih efektif, efisien, dan berbasis data.
 
-````markdown
+# Workflow
+
 ```mermaid
 flowchart TD
 A[Business Understanding] --> B[Data Understanding]
@@ -20,8 +21,43 @@ G --> H[Model Evaluation]
 H --> I[Feature Importance]
 I --> J[Business Impact Analysis]
 J --> K[Conclusion & Recommendation]
-
+```
 # Business Understanding
+
+# Dataset
+Dataset berisi informasi karakteristik nasabah seperti:
+
+Age
+
+Job
+
+Balance
+
+Housing Loan
+
+Personal Loan
+
+Campaign History
+
+Previous Outcome
+
+Target variable:
+
+0 - Tidak Deposit
+
+1 - Deposit
+
+Conversion rate dataset: 47.79%
+
+# Exploratory Data Analysis (EDA)
+
+Beberapa insight utama:
+
+Nasabah tanpa housing loan cenderung lebih banyak melakukan deposit
+
+Balance dan Age menjadi faktor penting dalam keputusan deposit
+
+Riwayat campaign sebelumnya mempengaruhi probabilitas deposit
 
 # Background
 
@@ -146,9 +182,25 @@ Strategi :
  * Candidate Models :
      * Decision Tree
      * Random Forest
-     * Gradient Boosting (XGBoost / LightGBM)
+  Train-test split menggunakan stratified sampling untuk menjaga proporsi kelas
 4. Evaluatin Strategy
 Primary Metrics
   * Recall --- Meminimalkan False Negative
   * Precision --- Menghindari pemborosan campaign
   * F1-Score --- Keseimbangan precision & recall
+
+# Model Performance (Random Forest)
+
+| Metric | Score |
+| :--- | :---: |
+| Accuracy | 70% |
+| Precision | 71% |
+| Recall | 63% |
+| ROC-AUC | 0.759 |
+
+# Confusion Matrix
+
+| Pred 0 | Pred 1 |
+| :--- | :---: |
+| Actual 0 | 
+| Actual 1 |
