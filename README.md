@@ -7,6 +7,20 @@
 Proyek ini bertujuan menganalisis efektivitas kampanye marketing bank dalam menawarkan produk deposito kepada nasabah, dengan fokus pada pengaruh kepemilikan pinjaman seperti housing loan dan personal loan terhadap keputusan nasabah membuka deposito.
 Melalui pendekatan machine learning classification, proyek ini akan mengidentifikasi faktor-faktor yang memengaruhi respons nasabah terhadap kampanye serta membantu bank meningkatkan strategi targeting marketing agar lebih efektif, efisien, dan berbasis data.
 
+````markdown
+```mermaid
+flowchart TD
+A[Business Understanding] --> B[Data Understanding]
+B --> C[Data Cleaning & Preprocessing]
+C --> D[Exploratory Data Analysis]
+D --> E[Feature Engineering]
+E --> F[Train-Test Split]
+F --> G[Modeling]
+G --> H[Model Evaluation]
+H --> I[Feature Importance]
+I --> J[Business Impact Analysis]
+J --> K[Conclusion & Recommendation]
+
 # Business Understanding
 
 # Background
