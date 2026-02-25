@@ -200,7 +200,65 @@ Primary Metrics
 
 # Confusion Matrix
 
-| Pred 0 | Pred 1 |
-| :--- | :---: |
-| Actual 0 | 
-| Actual 1 |
+|          | Pred 0 | Pred 1 |
+| -------- | ------ | ------ |
+| Actual 0 | 624    | 191    |
+| Actual 1 | 273    | 473    |
+
+* True Positive (TP) : 473
+* False Positive (FP) : 191
+* False Negative (FN) : 273
+* True Negative (TN) : 624
+
+# Business Impact Analysis
+
+Tanpa model (hubungi seluruh 1561 data test) :
+
+* Conversion rate : 47.8%
+* Biaya (Rp5.000 per call) : Rp7.805.000
+
+Dengan model : 
+
+* Hanya hubungi 664 nasabah (TP + FP)
+* Conversion rate meningkat menjadi 71%
+* Biaya turun menjadi Rp3.320.000
+
+# Feature Importance (Random Forest)
+
+Fitur paling berpengaruh :
+
+1. Balance
+2. Age
+3. Campaign
+4. Pdays
+5. Housing
+
+Insight : Segmentasi berdasarkan saldo dan usiam enjadi strategi utama dalam campaign marketing.
+
+# Trade Off
+
+Recall sebesar 63% menunjukkan masih ada 273 nasabah potensial yang terlewat.
+
+Threshold tuning atau teknik balancing seperti SMOTE dapat digunakan untuk meningkatkan recall.
+
+# Tech Stack
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-learn
+
+# Conclusion
+
+Model Random Forest berhasil :
+
+* Meningkatkan conversion rate dari 47.8% menjadi 71%
+* Mengurangi jumlah kontak sebesar 57%
+* Mengoptimalkan biaya campaign
+
+Model ini dapat diintegrasikan ke sistem CRM untuk membantu pengambilan keputusan berbasis data.
+
+# Author
+
+Yosef Ivander
